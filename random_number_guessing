@@ -1,0 +1,59 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Random r=new Random();
+		
+		int n=10;
+		do{
+		    int k=0,t=0;
+		    System.out.println("Do you want to play the game:\n 1.yes \n 2.no");
+		    System.out.println("Enter your choice:");
+		int choice=sc.nextInt();
+		int randomnumber=r.nextInt(100);
+		
+		if(choice==1)
+		{
+		System.out.println("You have 10 attempts:");
+		k+=1;
+	
+		for(int i=1;i<=n;i++){
+		    System.out.println("Round "+i);
+		    
+		        System.out.println("Enter your guess:");
+		        int g=sc.nextInt();
+		       
+		        if(g==randomnumber){
+		            System.out.println("Congrulations! you win");
+		            t+=1;
+		            break;
+		        }
+		        else if(g<randomnumber){
+		            System.out.println("To lower! Try higher");
+		            
+		        }
+		        else{
+		            System.out.println("TO higher!Try lower");
+		        }
+		    }
+		  
+		  
+		    System.out.println("Random number is "+randomnumber);
+		}
+		else
+		{
+		    int result=(t/k)*100;
+		    System.out.println("win percentage :"+ result +"%");
+		    System.out.println("exiting-----");
+		    break;
+		    
+		}
+		    
+		}while(n>=10);
+		
+		    
+		
+		
+	}		
+}
